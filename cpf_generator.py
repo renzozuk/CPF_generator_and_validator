@@ -1,5 +1,6 @@
 import random
-from util.cpf_helper import cpf_validator
+from util.cpf_helper import cpf_validator, format_cpf_pattern
+from util.instructions_helper import print_fiscal_region_instructions
 
 
 def common_generate(cpf):
@@ -29,17 +30,7 @@ while choice.lower() != 's' and choice.lower() != 'n':
     choice = input("Você quer gerar um CPF de algum estado específico? (s/n): ")
 
 if choice.lower() == 's':
-    print("\nRegiões fiscais:", )
-    print("1 - DF, GO, MT, MS e TO;")
-    print("2 - AC, AP, AM, PA, RO e RR;")
-    print("3 - CE, MA e PI;")
-    print("4 - AL, PB, PE e RN;")
-    print("5 - BA e SE;")
-    print("6 - MG;")
-    print("7 - ES e RJ;")
-    print("8 - SP;")
-    print("9 - PR e SC;")
-    print("0 - RS.", end="\n\n")
+    print_fiscal_region_instructions()
 
     fiscal_region = -1
 
@@ -58,9 +49,6 @@ else:
         common_generate(cpf)
 
 
-cpf_str = ''.join(str(digit) for digit in cpf[0:3]) + "." \
-        + ''.join(str(digit) for digit in cpf[3:6]) + "." \
-        + ''.join(str(digit) for digit in cpf[6:9]) + "-" \
-        + ''.join(str(digit) for digit in cpf[9:11]) \
+cpf_str = format_cpf_pattern(cpf)
 
 print(f"\nCPF gerado: {cpf_str}")

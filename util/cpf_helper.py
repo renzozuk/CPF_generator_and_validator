@@ -32,3 +32,10 @@ def cpf_validator(cpf):
         return True
     else:
         return False
+
+
+def format_cpf_pattern(cpf):
+    return ''.join(str(digit) for digit in cpf[0:3]) + "." \
+        + ''.join(str(digit) for digit in cpf[3:6]) + "." \
+        + ''.join(str(digit) for digit in cpf[6:9]) + "-" \
+        + ''.join(str(digit) for digit in cpf[9:11])

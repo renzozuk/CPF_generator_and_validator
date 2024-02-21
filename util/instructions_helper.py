@@ -1,0 +1,12 @@
+def print_fiscal_region_instructions():
+    print("\nRegiões fiscais:", )
+    print("1 - DF, GO, MT, MS e TO;")
+    print("2 - AC, AP, AM, PA, RO e RR;")
+    print("3 - CE, MA e PI;")
+    print("4 - AL, PB, PE e RN;")
+    print("5 - BA e SE;")
+    print("6 - MG;")
+    print("7 - ES e RJ;")
+    print("8 - SP;")
+    print("9 - PR e SC;")
+    print("0 - RS.", end="\n\n")
